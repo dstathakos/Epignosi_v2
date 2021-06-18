@@ -1,0 +1,30 @@
+//Popins
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+$popins: "Poppins", sans-serif;
+
+body {
+  font-family: $popins;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: $popins;
+  font-weight: 400;
+}
+
+.ml-auto .dropdown-menu {
+  left: auto !important;
+  right: 0px;
+}
+.navbar {
+  padding: 2rem 2rem;
+}
+article {
+  padding: 1rem;
+}
