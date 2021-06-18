@@ -16,12 +16,16 @@ $block_content = '<!-- wp:latest-posts {"postsToShow":3,"displayPostContent":tru
 
 echo do_blocks($block_content);
 */
+
+
 ?>
-<div class="container">
-<div class="row justify-content-center">
+
 <!-- Blog --> 
-<h1>Tips from our blog</h1>
-</div>
+<div class="container">
+
+
+<h1 class="sec-title">Tips from our blog</h1>
+
 <div class="row justify-content-center">
 <?php
 $args = array(
@@ -36,20 +40,23 @@ if ( $arr_posts->have_posts() ) :
  
     while ( $arr_posts->have_posts() ) :
         $arr_posts->the_post();
+        $category = get_the_category();
         ?>
         
         
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <div class="col-lg-4">
             
-        <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="<?php the_post_thumbnail();?>" alt="Card image cap">
+        <div class="card">
+  <?php echo the_post_thumbnail( 'medium', array( 'class' => 'card-img-top' ) ); ?>
   <div class="card-body">
+      <p class="card-cat"><?php echo $category[0]->cat_name; ?></p>
     <h5 class="card-title"><?php the_title(); ?></h5>
-    <p class="card-text"><?php the_excerpt(); ?></p>
-    <a href="<?php the_permalink(); ?>" class="link">READ MORE</a><i class="far fa-arrow-right"></i>
+    <p class="card-date"><i class="far fa-clock"></i> <?php the_date() ?></p>
+    <?php  echo '<p class="card-text">' . get_the_excerpt() . '</p>' ?>
+    <a href="<?php the_permalink(); ?>" class="post-link">READ MORE <i class="fas fa-long-arrow-alt-right"></i></a> 
   </div>
 </div>
-        </article>
+        </div>
         
         <?php
     endwhile;
@@ -59,6 +66,12 @@ endif;
 </div>
 </div>
 
+<!-- Contact Form--> 
+<div class="container lgray">
 
+
+
+
+</div>
 <?php 
 get_footer();
