@@ -17,7 +17,12 @@ p {
   font-family: $popins;
   font-weight: 400;
 }
-
+p {
+  color: #737373;
+}
+a {
+  color: #4c60d9;
+}
 .ml-auto .dropdown-menu {
   left: auto !important;
   right: 0px;
@@ -26,19 +31,21 @@ p {
   padding: 2rem 2rem;
 }
 .card {
-  -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.13);
-  -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.13);
-  box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.13);
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.13);
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.13);
 }
-.col-lg-4,.col-lg-3 {
-  padding:20px;
+.col-lg-4,
+.col-lg-3 {
+  padding: 20px;
 }
 .card-title {
   font-weight: 700;
 }
-.card-cat, .card-date {
+.card-cat,
+.card-date {
   font-weight: 400;
-  color:#afafaf;
+  color: #afafaf;
 }
 .card-cat {
   text-transform: uppercase;
@@ -47,15 +54,14 @@ p {
 .post-link {
   letter-spacing: 3px;
   font-weight: 700;
-  color:#006adc;
 }
 .mgray {
   background-color: #e8ecef;
 }
 .sec-title {
   font-weight: 700;
-  font-size:20px;
-  padding-bottom: 1rem;
+  font-size: 20px;
+  padding-bottom: 2rem;
 }
 
 .ftitle {
@@ -64,20 +70,51 @@ p {
   font-size: 18px;
 }
 .ftext {
-  padding-top:1rem;
+  padding-top: 1rem;
 }
 .pre-footer {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
-.flink a{
-color:#7d7d7d;
+.flink a {
+  color: #7d7d7d;
 }
 .gray {
-  padding-top:2rem;
-  padding-bottom:1rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
   background-color: #353a40;
 }
 .gray p {
-  color:#afafaf;
+  color: #afafaf;
+}
+label {
+  color: #afafaf;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn-success {
+  color: #4c60d9;
+  background-color: transparent;
+  border-color: #4c60d9;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-top: 1rem;
+  &:hover,
+  &:active,
+  &:focus,
+  &:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background-color: #4c60d9;
+    border-color: #4c60d9;
+    box-shadow: none;
+  }
+}
+.lgray {
+  background-color: #f8f9fb;
+}
+.formcont {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }

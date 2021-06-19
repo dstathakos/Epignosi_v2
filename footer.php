@@ -55,6 +55,6 @@ itaque temporibus.</p>
 </div>
 
 <!-- Sripts -->
-<script src="<?php echo get_template_directory_uri()?>\build\assets\src\js\main.js"></script>
+
 <?php
 ?>
