@@ -14,7 +14,7 @@ get_header();
 <?php
 
 $block_content = '<!-- wp:assessment/header {"fontColor":"#ffffff","overlayColor":"#000000"} -->
-<div class="wp-block-assessment-header" style="background-image:url(./wp-content/themes/Epignosi_v2/build/assets/src/img/how-can-we-help-you.jpg);background-size:cover;background-position:center"><div class="overlay" style="background:#000000"></div><h2 class="content" style="color:#ffffff">How can we help you today?</h2></div>
+<div class="wp-block-assessment-header" style="background-image:url(' . get_template_directory_uri() . '/build/assets/src/img/how-can-we-help-you.jpg);background-size:cover;background-position:center"><div class="overlay" style="background:#000000"></div><h2 class="content" style="color:#ffffff">How can we help you today?</h2></div>
 <!-- /wp:assessment/header -->';
 
 echo do_blocks($block_content);
