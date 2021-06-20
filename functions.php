@@ -15,3 +15,22 @@ function add_featured_image_support() {
 }
 
 add_action( 'after_setup_theme', 'add_featured_image_support' );
+
+function Hero_image_editor_assets() {
+    wp_enqueue_script(
+        'assessment/header',
+        get_template_directory_uri().'/build/assets/src/js/block.js',
+        array( 'wp-blocks', 'wp-element', 'wp-editor' )    
+    );
+    wp_enqueue_style(
+		'assessment/header-editor-style',
+        get_template_directory_uri().'/build/assets/src/css/editor.css',
+        array( 'wp-edit-blocks' )
+	);
+
+    wp_add_inline_script( 'assessment/header', 'const MYSCRIPT = ' . json_encode( array(
+        'themeUri' => get_template_directory_uri(),
+    ) ), 'before' );
+};
+
+add_action( 'enqueue_block_editor_assets', 'Hero_image_editor_assets');

@@ -2,23 +2,26 @@
 /**
  * Webpack configuration.
  */
-var webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const JS_DIR = path.resolve(__dirname, "assets/src/js");
-const IMG_DIR = path.resolve(__dirname, "assets/src/img");
 const CSS_DIR = path.resolve(__dirname, "assets/src/scss");
 const BUILD_DIR = path.resolve(__dirname, "build");
+const BLOCK_DIR = path.resolve(__dirname, "gutenberg/src");
+
 const entry = {
   main: JS_DIR + "/main.js",
   css: CSS_DIR + "/main.scss",
+  block: BLOCK_DIR + "/block-header.js",
+  editor: BLOCK_DIR + "/editor.scss",
 };
 const output = {
   path: BUILD_DIR,
   filename: "assets/src/js/[name].js",
 };
+
 /**
  * Note: argv.mode will return 'development' or 'production'.
  */
@@ -30,24 +33,21 @@ const plugins = (argv) => [
   new MiniCssExtractPlugin({
     filename: "assets/src/css/[name].css",
   }),
-  /*new webpack.ProvidePlugin({
-    $: "jquery",
-    jQuery: "jquery",
-    "window.jQuery": "jquery",
-    Tether: "tether",
-    "window.Tether": "tether",
-  }),*/
 ];
 const rules = [
   {
-    test: /\.js$/,
-    include: [JS_DIR],
-    exclude: /node_modules/,
-    use: "babel-loader",
+    test: /\.jsx?$/,
+    exclude: /(node_modules)/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env", "@babel/preset-react"],
+      },
+    },
   },
   {
     test: /\.(sa|sc|c)ss$/,
-    include: [CSS_DIR],
+    include: [CSS_DIR, BLOCK_DIR],
     exclude: /node_modules/,
     use: [
       {
@@ -80,16 +80,6 @@ const rules = [
       },
     },
   },
-  /*{
-    test: /\.(woff(2)?|ttf|eot)$/,
-    use: {
-      loader: "file-loader",
-      options: {
-        name: "[path][name].[ext]",
-        publicPath: "production" === process.env.NODE_ENV ? "../" : "../../",
-      },
-    },
-  },*/
 ];
 /**
  * Since you may have to disambiguate in your webpack.config.js between development and production builds,
@@ -108,7 +98,7 @@ module.exports = (env, argv) => ({
    * A full SourceMap is emitted as a separate file ( e.g.  main.js.map )
    * It adds a reference comment to the bundle so development tools know where to find it.
    * set this to false if you don't need it
-   */
+   *   */
   devtool: "source-map",
   module: {
     rules: rules,

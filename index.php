@@ -10,18 +10,20 @@ get_header();
 <!-- body goes here -->
 
 <!-- Gutten block here -->
+<div class="container-fluid full-w">
 <?php
-/*
-$block_content = '<!-- wp:latest-posts {"postsToShow":3,"displayPostContent":true,"excerptLength":30,"displayPostDate":true,"postLayout":"grid","displayFeaturedImage":true,"featuredImageSizeSlug":"large","align":"wide","className":"tw-mt-8 tw-img-ratio-3-2 tw-stretched-link is-style-default"} /-->';
+
+$block_content = '<!-- wp:assessment/header {"fontColor":"#ffffff","overlayColor":"#000000"} -->
+<div class="wp-block-assessment-header" style="background-image:url(./wp-content/themes/Epignosi_v2/build/assets/src/img/how-can-we-help-you.jpg);background-size:cover;background-position:center"><div class="overlay" style="background:#000000"></div><h2 class="content" style="color:#ffffff">How can we help you today?</h2></div>
+<!-- /wp:assessment/header -->';
 
 echo do_blocks($block_content);
-*/
 
 
 ?>
-
+</div>
 <!-- Blog --> 
-<div class="container">
+<div class="container blogqu">
 
 
 <h1 class="sec-title">Tips from our blog</h1>
@@ -128,11 +130,11 @@ Nam eget mi non massa condimentum ultrices. Curabitur et consectetur ante. Morbi
 sagittis varius nisl. Nunc in consectetur leo, sed hendrerit leo. Nulla eleifend sed felis eu auctor.
 </p>
 <div class="row">
-<div class="col-lg-1"><a href="#"><i class="fab fa-twitter"></i></a></div>
-<div class="col-lg-1"><a href="#"><i class="fab fa-facebook-square"></i></a></div>
-<div class="col-lg-1"><a href="#"><i class="fab fa-instagram"></i></a></div>
-<div class="col-lg-1"><a href="#"><i class="fab fa-pinterest"></i></a></div>
-<div class="col-lg-1"><a href="#"><i class="fab fa-vimeo"></i></a></div>
+<div class="col-1"><a href="#"><i class="fab fa-twitter"></i></a></div>
+<div class="col-1"><a href="#"><i class="fab fa-facebook-square"></i></a></div>
+<div class="col-1"><a href="#"><i class="fab fa-instagram"></i></a></div>
+<div class="col-1"><a href="#"><i class="fab fa-pinterest"></i></a></div>
+<div class="col-1"><a href="#"><i class="fab fa-vimeo"></i></a></div>
 </div>
 </div>
 </div>

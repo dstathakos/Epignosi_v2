@@ -13,3 +13,4 @@ dom.watch();
 
 // Images.
 import "../img/logo.png";
+import "../img/how-can-we-help-you.jpg";
