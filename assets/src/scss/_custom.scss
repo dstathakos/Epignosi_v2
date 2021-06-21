@@ -2,17 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
 $popins: "Poppins", sans-serif;
+$blueish: #4c60d9;
 
-body {
-  font-family: $popins;
-  font-weight: 400;
-}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
+body,
 p {
   font-family: $popins;
   font-weight: 400;
@@ -21,11 +19,13 @@ p {
   color: #737373;
 }
 a {
-  color: #4c60d9;
+  color: $blueish;
 }
-.ml-auto .dropdown-menu {
-  left: auto !important;
-  right: 0px;
+.ml-auto {
+  .dropdown-menu {
+    left: auto !important;
+    right: 0px;
+  }
 }
 .navbar {
   padding: 2rem 2rem;
@@ -63,7 +63,6 @@ a {
   font-size: 2rem;
   padding-bottom: 2rem;
 }
-
 .ftitle {
   font-weight: 700;
   text-transform: uppercase;
@@ -78,16 +77,21 @@ a {
   padding-top: 7rem;
   padding-bottom: 7rem;
 }
-.flink a {
-  color: #7d7d7d;
+.flink {
+  a {
+    color: #7d7d7d;
+    &:hover {
+      color: $blueish;
+    }
+  }
 }
 .gray {
   padding-top: 2rem;
   padding-bottom: 1rem;
   background-color: #353a40;
-}
-.gray p {
-  color: #afafaf;
+  p {
+    color: #afafaf;
+  }
 }
 label {
   color: #afafaf;
@@ -95,9 +99,9 @@ label {
   letter-spacing: 1px;
 }
 .btn-success {
-  color: #4c60d9;
+  color: $blueish;
   background-color: transparent;
-  border-color: #4c60d9;
+  border-color: $blueish;
   border-radius: 5px;
   text-transform: uppercase;
   font-weight: 700;
@@ -108,52 +112,57 @@ label {
   &:focus,
   &:not(:disabled):not(.disabled):active {
     color: #fff;
-    background-color: #4c60d9;
-    border-color: #4c60d9;
     box-shadow: none;
+    background-color: $blueish;
+    border-color: $blueish;
   }
 }
 .lgray {
   background-color: #f8f9fb;
 }
-
 .wp-block-assessment-header {
   position: relative;
   padding: 14em 0;
   text-align: center;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    font-size: 3rem;
+    font-weight: 700;
+  }
 }
-
-.wp-block-assessment-header .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.3;
+.colorselect {
+  p {
+    padding: 16px;
+    font-weight: 500;
+  }
+  .components-button {
+    &.is-small {
+      margin-right: 20px;
+    }
+  }
 }
-
-.wp-block-assessment-header .content {
-  position: relative;
-  z-index: 1;
-  font-size: 3rem;
-  font-weight: 700;
-}
-.colorselect p {
-  padding: 16px;
-  font-weight: 500;
-}
-button.imgselect {
+.imgselect {
   margin: 16px;
-}
-.colorselect .components-button.is-small {
-  margin-right: 20px;
 }
 .full-w {
   padding: 0;
 }
 .btn-primary {
-  background-color: #4c60d9;
+  background-color: $blueish;
 }
-.navbar-light .navbar-nav .nav-link {
-  font-weight: 600;
+.navbar-light {
+  .navbar-nav {
+    .nav-link {
+      font-weight: 600;
+    }
+  }
 }

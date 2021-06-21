@@ -8,8 +8,13 @@ get_header();
 
 
 <!-- body goes here -->
+<!-- If we were actually making a template. Display Editor/Page content loop
+    <?php // while ( have_posts() ) : the_post(); ?>
+    <?php // the_content(); ?>
+    <?php // endwhile; ?>
+-->
 
-<!-- Gutten block here -->
+<!-- Gutten block -->
 <div class="container-fluid full-w">
 <?php
 
@@ -22,6 +27,7 @@ echo do_blocks($block_content);
 
 ?>
 </div>
+
 <!-- Blog --> 
 <div class="container blogqu">
 

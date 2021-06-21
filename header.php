@@ -15,6 +15,11 @@
       <a class="navbar-brand" href="#">
         <img alt="Epignosi" src="<?php echo get_template_directory_uri()?>\build\assets\src\img\logo.png">
       </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
@@ -35,6 +40,8 @@
         </ul>
     </div>
     </nav>
+
+
 
 <?php
 ?>
